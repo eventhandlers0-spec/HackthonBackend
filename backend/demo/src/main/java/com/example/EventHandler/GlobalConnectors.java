@@ -7,7 +7,7 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.cors.CorsConfigurationSource;
 
 @Configuration
-public class CORSGlobalConnectors {
+public class GlobalConnectors {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration config = new CorsConfiguration();
@@ -24,4 +24,5 @@ public class CORSGlobalConnectors {
         return source;
     }
 }
+
 

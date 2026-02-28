@@ -27,7 +27,7 @@ public class SecurityConfiguration {
                .cors(Customizer.withDefaults())
                .csrf(csrf->csrf.disable())
                .authorizeHttpRequests(auth->auth
-//                       .requestMatchers("/home/**","/topic/**").permitAll()
+                      .requestMatchers("/**").permitAll()
                        .requestMatchers("/allEvents").permitAll()
                        .requestMatchers("/Register").permitAll()
                        .requestMatchers("/login").permitAll()
@@ -50,3 +50,4 @@ public class SecurityConfiguration {
        return http.build();
     }
 }
+

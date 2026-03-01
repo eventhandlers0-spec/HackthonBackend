@@ -29,6 +29,10 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
            FilterChain filterChain
    )throws ServletException, IOException {
        String path=request.getRequestURI();
+       if ("OPTIONS".equalsIgnoreCase(request.getMethod())) {
+    filterChain.doFilter(request, response);
+    return;
+}
        if(request.getServletPath().startsWith("/Event")||path.startsWith("/allEvents")||path.startsWith("/getAllCustomers") || path.startsWith("/email") || path.startsWith("/customer")){
            filterChain.doFilter(request, response);
            return;
@@ -55,3 +59,4 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
        }
    }
 }
+

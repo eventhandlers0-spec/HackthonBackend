@@ -1,5 +1,5 @@
 package com.example.EventHandler.security;
-
+import org.springframework.http.HttpMethod;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -36,6 +36,7 @@ public class SecurityConfiguration {
                        .requestMatchers("/getAllCustomers").permitAll()
                        .requestMatchers("/email/**").permitAll()
                        .requestMatchers("/addEvent").permitAll()
+                                .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                        .anyRequest().authenticated()
                )
                .exceptionHandling(ex->
@@ -50,4 +51,5 @@ public class SecurityConfiguration {
        return http.build();
     }
 }
+
 

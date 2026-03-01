@@ -12,9 +12,9 @@ public class GlobalConnectors {
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration config = new CorsConfiguration();
         config.setAllowCredentials(true);
-        
+    
         // Replace * with your actual frontend URL
-        config.addAllowedOrigin("https://eventhandlers0-spec.github.io/Hackthon/");
+       config.addAllowedOrigin("https://eventhandlers0-spec.github.io");
         
         config.addAllowedHeader("*");
         config.addAllowedMethod("*");
@@ -24,6 +24,7 @@ public class GlobalConnectors {
         return source;
     }
 }
+
 
 
 
